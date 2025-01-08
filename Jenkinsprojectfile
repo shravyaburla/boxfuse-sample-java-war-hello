@@ -30,7 +30,7 @@ pipeline {
                 expression { params.BRANCH_NAME == 'fe/dev' }
             }
             steps {
-                deployToTomcat('13.201.62.55', 'tomcat', 'tomcat', 'http://13.201.62.55:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Dev')
+                deployTodevops('3.110.103.151', 'devops', 'devops', 'http://3.110.103.151:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Dev')
             }
         }
         stage("Deploy to UAT") {
@@ -38,7 +38,7 @@ pipeline {
                 expression { params.BRANCH_NAME == 'fe/qa' }
             }
             steps {
-                deployToTomcat('35.154.202.90', 'tomcat', 'tomcat', 'http://35.154.202.90:8080/manager/text', '/boxfuse-sample-java-war-hello', 'UAT')
+                deployTodevops('15.206.79.78', 'devops', 'devops', 'http://15.206.79.78:8080/manager/text', '/boxfuse-sample-java-war-hello', 'UAT')
             }
         }
         stage("Deploy to Prod") {
@@ -49,7 +49,7 @@ pipeline {
                 input(message: "Do you want to proceed to PROD?", ok: "Proceed") // Approval step
 
                 // Deploy to PROD server after approval
-                deployToTomcat('13.235.113.46', 'tomcat', 'tomcat', 'http://13.235.113.46:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Prod')
+                deployTodevops('13.235.133.111', 'devops', 'devops', 'http://13.235.133.111:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Prod')
                 
                 // Send Slack notification
                 slackSend(channel: 'devops-after-hours', message: "Deployment to PROD has been approved by manager.")
@@ -58,12 +58,12 @@ pipeline {
     }
 }
 
-def deployToTomcat(tomcatIP, username, password, tomcatURL, contextPath, environment) {
+def deployTodevops(devopsIP, username, password, devopsURL, contextPath, environment) {
     def warFileName = 'target/boxfuse-sample-java-war-hello.war'
 
     // Deploy the WAR file using curl
     sh """
-        curl -v -u ${username}:${password} --upload-file ${warFileName} ${tomcatURL}/deploy?path=${contextPath}&update=true
+        curl -v -u ${username}:${password} --upload-file ${warFileName} ${devopsURL}/deploy?path=${contextPath}&update=true
     """
     echo "Deployment to ${environment} server completed."
 }
