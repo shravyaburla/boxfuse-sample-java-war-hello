@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Jenkins Emergency TechOps Labs</title>
+    <title>Jenkins Emergency TechOps Labs - QA Environment</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -13,7 +13,7 @@
         }
 
         header {
-            background-color: #007bff;
+            background-color: #28a745;
             padding: 20px 0;
         }
 
@@ -82,32 +82,32 @@
 </head>
 <body>
     <header>
-        <h1>Jenkins Emergency TechOps Labs</h1>
-        <p>Level up your skills by solving challenges!</p>
+        <h1>Jenkins Emergency TechOps Labs - QA</h1>
+        <p>Test your skills in solving QA-related challenges!</p>
     </header>
 
     <section>
-        <h2>Select Your DEVOPS  Challenge</h2>
+        <h2>Select Your QA Challenge</h2>
         <div class="game-area">
             <div class="game-card" onclick="showDetails('Level 1')">
-                <img src="https://example.com/level1.jpg" alt="Level 1">
-                <h3>Level 1: Setup Jenkins</h3>
-                <p>Configure Jenkins and integrate with GitHub.</p>
+                <img src="images/qa-level1.jpg" alt="Level 1">
+                <h3>Level 1: Automated Test Setup</h3>
+                <p>Set up automated tests in Jenkins and integrate with test suites.</p>
             </div>
             <div class="game-card" onclick="showDetails('Level 2')">
-                <img src="https://example.com/level2.jpg" alt="Level 2">
-                <h3>Level 2: Build Pipeline</h3>
-                <p>Create and execute a CI/CD pipeline.</p>
+                <img src="images/qa-level2.jpg" alt="Level 2">
+                <h3>Level 2: Continuous Testing</h3>
+                <p>Implement continuous testing as part of your CI/CD pipeline.</p>
             </div>
             <div class="game-card" onclick="showDetails('Level 3')">
-                <img src="https://example.com/level3.jpg" alt="Level 3">
-                <h3>Level 3: Webhook Deployment</h3>
-                <p>Deploy applications using webhooks.</p>
+                <img src="images/qa-level3.jpg" alt="Level 3">
+                <h3>Level 3: Test Reporting</h3>
+                <p>Generate test reports and ensure they are accessible.</p>
             </div>
             <div class="game-card" onclick="showDetails('Level 4')">
-                <img src="https://example.com/level4.jpg" alt="Level 4">
-                <h3>Level 4: Debug & Fix</h3>
-                <p>Resolve common Jenkins issues.</p>
+                <img src="images/qa-level4.jpg" alt="Level 4">
+                <h3>Level 4: Debug & Fix Test Failures</h3>
+                <p>Resolve failing test cases and enhance test reliability.</p>
             </div>
         </div>
     </section>
@@ -118,20 +118,20 @@
         function showDetails(level) {
             const details = {
                 'Level 1': {
-                    title: 'Level 1: Setup Jenkins',
-                    description: 'Learn how to set up Jenkins from scratch and integrate it with GitHub for source code management.',
+                    title: 'Level 1: Automated Test Setup',
+                    description: 'Learn how to set up automated tests in Jenkins and integrate with popular test frameworks such as JUnit or TestNG.',
                 },
                 'Level 2': {
-                    title: 'Level 2: Build Pipeline',
-                    description: 'Create a CI/CD pipeline for automated builds and deployments.',
+                    title: 'Level 2: Continuous Testing',
+                    description: 'Implement continuous testing as part of your CI/CD pipeline to catch errors early in the development lifecycle.',
                 },
                 'Level 3': {
-                    title: 'Level 3: Webhook Deployment',
-                    description: 'Use webhooks to trigger automated deployments to your environment.',
+                    title: 'Level 3: Test Reporting',
+                    description: 'Generate detailed test reports in Jenkins and ensure they are easily accessible for all team members.',
                 },
                 'Level 4': {
-                    title: 'Level 4: Debug & Fix',
-                    description: 'Identify and resolve common issues encountered in Jenkins setups.',
+                    title: 'Level 4: Debug & Fix Test Failures',
+                    description: 'Identify and resolve common test failures that occur during Jenkins builds, ensuring your tests pass successfully.',
                 },
             };
 
@@ -140,7 +140,19 @@
                 <h3>${selected.title}</h3>
                 <p>${selected.description}</p>
             `;
+
+            // For debugging/QA testing purposes: log details to the console
+            console.log('QA Challenge Selected:', level);
+            console.log('Challenge Details:', selected);
         }
     </script>
 </body>
 </html>
+
+           
+      
+
+       
+       
+  
+               
