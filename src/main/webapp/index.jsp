@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Jenkins Emergency TechOps Labs</title>
+    <title>Jenkins Emergency TechOps Labs - Dev Environment</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -87,25 +87,25 @@
     </header>
 
     <section>
-        <h2>Select Your DEVOPS  Challenge</h2>
+        <h2>Select Your DEVOPS Challenge</h2>
         <div class="game-area">
             <div class="game-card" onclick="showDetails('Level 1')">
-                <img src="https://example.com/level1.jpg" alt="Level 1">
+                <img src="images/level1.jpg" alt="Level 1">
                 <h3>Level 1: Setup Jenkins</h3>
                 <p>Configure Jenkins and integrate with GitHub.</p>
             </div>
             <div class="game-card" onclick="showDetails('Level 2')">
-                <img src="https://example.com/level2.jpg" alt="Level 2">
+                <img src="images/level2.jpg" alt="Level 2">
                 <h3>Level 2: Build Pipeline</h3>
                 <p>Create and execute a CI/CD pipeline.</p>
             </div>
             <div class="game-card" onclick="showDetails('Level 3')">
-                <img src="https://example.com/level3.jpg" alt="Level 3">
+                <img src="images/level3.jpg" alt="Level 3">
                 <h3>Level 3: Webhook Deployment</h3>
                 <p>Deploy applications using webhooks.</p>
             </div>
             <div class="game-card" onclick="showDetails('Level 4')">
-                <img src="https://example.com/level4.jpg" alt="Level 4">
+                <img src="images/level4.jpg" alt="Level 4">
                 <h3>Level 4: Debug & Fix</h3>
                 <p>Resolve common Jenkins issues.</p>
             </div>
@@ -136,11 +136,18 @@
             };
 
             const selected = details[level];
-            document.getElementById('details').innerHTML = `
+            document.getElementById('details').innerHTML = ` 
                 <h3>${selected.title}</h3>
                 <p>${selected.description}</p>
             `;
+
+            // For debugging purposes: log details to the console
+            console.log('Selected Level:', level);
+            console.log('Details:', selected);
         }
     </script>
 </body>
 </html>
+
+               
+           
