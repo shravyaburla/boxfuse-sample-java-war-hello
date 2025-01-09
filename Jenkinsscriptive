@@ -16,7 +16,7 @@ node {
 
     stage('Deploy') {
         sshagent(['8f4c880d-0d3a-49a9-93ff-ab445b5f15d0']) {
-            sh 'scp -o StrictHostKeyChecking=no target/boxfuse-sample-java-war-hello.war ubuntu@3.110.44.245:/home/ubuntu/apache-tomcat-9.0.98/webapps/'
+            sh 'scp -o StrictHostKeyChecking=no target/boxfuse-sample-java-war-hello.war ubuntu@13.213.38.168:/home/ubuntu/apache-tomcat-9.0.98/webapps/'
             
             sh 'ssh ubuntu@13.213.38.168 sudo /home/ubuntu/apache-tomcat-9.0.98/bin/shutdown.sh'
             sh 'ssh ubuntu@13.213.38.168 sudo /home/ubuntu/apache-tomcat-9.0.98/bin/startup.sh'
